@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/helper/SizeConfig.dart';
 
 class RoundIconButton extends StatelessWidget {
   RoundIconButton({@required this.icon, @required this.onPressed});
@@ -8,13 +9,14 @@ class RoundIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return RawMaterialButton(
       elevation: 0.0,
       child: Icon(icon),
       onPressed: onPressed,
       constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
+        width: SizeConfig.blockSizeHorizontal*12,
+        height: SizeConfig.blockSizeVertical*10,
       ),
       shape: CircleBorder(),
       fillColor: Color(0xFF4C4F5E),

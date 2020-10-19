@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/constants.dart';
 import 'package:flutter_app/components/reusable_card.dart';
 import 'package:flutter_app/components/bottom_button.dart';
+import 'package:flutter_app/helper/SizeConfig.dart';
 
 class ResultsPage extends StatelessWidget {
   ResultsPage(
@@ -15,6 +16,7 @@ class ResultsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       appBar: AppBar(
         title: Text('BMI CALCULATOR'),
@@ -29,7 +31,8 @@ class ResultsPage extends StatelessWidget {
               alignment: Alignment.bottomLeft,
               child: Text(
                 'Your Result',
-                style: kTitleTextStyle,
+                style: TextStyle(color: Colors.white,
+                fontSize:SizeConfig.blockSizeHorizontal*10,fontWeight: FontWeight.bold,),
               ),
             ),
           ),
@@ -43,16 +46,19 @@ class ResultsPage extends StatelessWidget {
                 children: <Widget>[
                   Text(
                     resultText.toUpperCase(),
-                    style: kResultTextStyle,
+                    style: TextStyle(color: Color(0xFF24D876),
+                      fontSize:SizeConfig.blockSizeHorizontal*7,fontWeight: FontWeight.bold,),
                   ),
                   Text(
                     bmiResult,
-                    style: kBMITextStyle,
+                    style: TextStyle(color: Colors.white,
+                      fontSize:SizeConfig.blockSizeHorizontal*17,fontWeight: FontWeight.bold,),
                   ),
                   Text(
                     interpretation,
                     textAlign: TextAlign.center,
-                    style: kBodyTextStyle,
+                    style: TextStyle(color: Colors.white,
+                      fontSize:SizeConfig.blockSizeHorizontal*5,fontWeight: FontWeight.bold,),
                   ),
                 ],
               ),

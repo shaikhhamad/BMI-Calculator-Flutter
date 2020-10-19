@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/constants.dart';
+import 'package:flutter_app/helper/SizeConfig.dart';
 
 class BottomButton extends StatelessWidget {
   BottomButton({@required this.onTap, @required this.buttonTitle});
@@ -9,6 +10,7 @@ class BottomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -22,7 +24,7 @@ class BottomButton extends StatelessWidget {
         margin: EdgeInsets.only(top: 10.0),
         padding: EdgeInsets.only(bottom: 20.0),
         width: double.infinity,
-        height: kBottomContainerHeight,
+        height:SizeConfig.blockSizeVertical*10,
       ),
     );
   }

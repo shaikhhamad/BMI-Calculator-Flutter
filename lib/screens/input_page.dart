@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/helper/SizeConfig.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_app/components/icon_content.dart';
 import 'package:flutter_app/components/reusable_card.dart';
@@ -26,6 +27,8 @@ class _InputPageState extends State<InputPage> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('BMI CALCULATOR'),
@@ -49,6 +52,7 @@ class _InputPageState extends State<InputPage> {
                   cardChild: IconContent(
                     icon: FontAwesomeIcons.mars,
                     label: 'MALE',
+
                   ),
                 ),
               ),
@@ -78,7 +82,8 @@ class _InputPageState extends State<InputPage> {
                 children: <Widget>[
                   Text(
                     'HEIGHT',
-                    style: kLabelTextStyle,
+                    style: TextStyle(color: Color(0xFF8D8E98),
+                        fontSize:SizeConfig.blockSizeHorizontal*5,fontWeight: FontWeight.bold,),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -87,11 +92,13 @@ class _InputPageState extends State<InputPage> {
                     children: <Widget>[
                       Text(
                         height.toString(),
-                        style: kNumberTextStyle,
+                          style: TextStyle(color: Colors.white,
+                              fontSize:SizeConfig.blockSizeHorizontal*10,fontWeight: FontWeight.bold,)
                       ),
                       Text(
                         'cm',
-                        style: kLabelTextStyle,
+                        style: TextStyle(color: Color(0xFF8D8E98),
+                            fontSize:SizeConfig.blockSizeHorizontal*5,fontWeight: FontWeight.bold,),
                       )
                     ],
                   ),
@@ -104,7 +111,7 @@ class _InputPageState extends State<InputPage> {
                       thumbShape:
                           RoundSliderThumbShape(enabledThumbRadius: 15.0),
                       overlayShape:
-                          RoundSliderOverlayShape(overlayRadius: 30.0),
+                          RoundSliderOverlayShape(overlayRadius: 25.0),
                     ),
                     child: Slider(
                       value: height.toDouble(),
@@ -132,11 +139,13 @@ class _InputPageState extends State<InputPage> {
                       children: <Widget>[
                         Text(
                           'WEIGHT',
-                          style: kLabelTextStyle,
+                          style: TextStyle(color: Color(0xFF8D8E98),
+                              fontSize:SizeConfig.blockSizeHorizontal*5,fontWeight: FontWeight.bold,),
                         ),
                         Text(
                           weight.toString(),
-                          style: kNumberTextStyle,
+                          style: TextStyle(color: Colors.white,
+                              fontSize:SizeConfig.blockSizeHorizontal*10,fontWeight: FontWeight.bold,),
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -173,11 +182,13 @@ class _InputPageState extends State<InputPage> {
                       children: <Widget>[
                         Text(
                           'AGE',
-                          style: kLabelTextStyle,
+                          style: TextStyle(color: Color(0xFF8D8E98),
+                              fontSize:SizeConfig.blockSizeHorizontal*5,fontWeight: FontWeight.bold,),
                         ),
                         Text(
                           age.toString(),
-                          style: kNumberTextStyle,
+                          style: TextStyle(color: Colors.white,
+                              fontSize:SizeConfig.blockSizeHorizontal*10,fontWeight: FontWeight.bold,),
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
